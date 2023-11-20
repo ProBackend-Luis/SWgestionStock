@@ -6,6 +6,7 @@
     <title>Sucursales</title>
 </head>
 <body>
-    <h1>Vista Sucursales</h1>
+    Usuario: {{ $nombre }}
+    <h1>Vengo desde SucursalesController</h1>
 </body>
 </html>

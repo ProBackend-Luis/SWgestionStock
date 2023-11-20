@@ -6,6 +6,9 @@
     <title>Productos</title>
 </head>
 <body>
-    <h1>Pagina Productos</h1>
+
+    Usuario: {{ $nombre }}
+    <h1>Vengo desde ProductosController</h1>
+    
 </body>
 </html>

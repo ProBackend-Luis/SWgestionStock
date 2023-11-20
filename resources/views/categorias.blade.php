@@ -6,6 +6,7 @@
     <title>Categorias</title>
 </head>
 <body>
-    <h1>Vista Categorias</h1>
+    Usuario: {{ $nombre }}
+    <h1>Vengo desde CategoriasController</h1>
 </body>
 </html>

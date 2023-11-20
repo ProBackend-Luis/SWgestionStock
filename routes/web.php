@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\CategoriasController;
+use App\Http\Controllers\SucursalesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,9 +23,9 @@ Route::get('/', function () {
     return view('inicio');
 });
 
-Route::get('/productos', function () {
-    return view('productos');
-});
+//Route::get('/productos', function () {
+//    return view('productos');
+//});
 
 Route::get('/categorias', function () {
     return view('categorias');
@@ -33,4 +35,8 @@ Route::get('/sucursales', function () {
     return view('sucursales');
 });
 
+Route::get('/productos', [ProductosController::class, 'list'])->name('productos.list');
 
+Route::get('/categorias', [CategoriasController::class, 'list'])->name('categorias.list');
+
+Route::get('/sucursales', [SucursalesController::class, 'list'])->name('sucursales.list');
