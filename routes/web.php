@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\SucursalesController;
+use App\Http\Controllers\InicioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,21 +20,29 @@ Route::get('/login', function () {
     return view('login');
 });
 
+/*
 Route::get('/', function () {
     return view('inicio');
 });
+*/
 
 //Route::get('/productos', function () {
 //    return view('productos');
 //});
 
+/*
 Route::get('/categorias', function () {
     return view('categorias');
 });
+*/
 
+/*
 Route::get('/sucursales', function () {
     return view('sucursales');
 });
+*/
+
+Route::get('/inicio', [InicioController::class, 'list'])->name('inicio.list');
 
 Route::get('/productos', [ProductosController::class, 'list'])->name('productos.list');
 

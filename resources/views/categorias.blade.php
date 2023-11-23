@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorias</title>
-</head>
-<body>
-    Usuario: {{ $nombre }}
+@extends('layouts.master')
+
+
+@section('content')
+
+Usuario: {{ $nombre }}
     <h1>Vengo desde CategoriasController</h1>
-</body>
-</html>
+
+
+@stop
