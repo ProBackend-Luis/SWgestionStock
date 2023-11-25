@@ -53,6 +53,7 @@
 </div>
 
 
+
 @section('footer')
     <h6>Gracias por tu visita!!!</h6>
 @show

@@ -42,10 +42,16 @@ Route::get('/sucursales', function () {
 });
 */
 
+
 Route::get('/inicio', [InicioController::class, 'list'])->name('inicio.list');
 
+/*
 Route::get('/productos', [ProductosController::class, 'list'])->name('productos.list');
-
 Route::get('/categorias', [CategoriasController::class, 'list'])->name('categorias.list');
-
 Route::get('/sucursales', [SucursalesController::class, 'list'])->name('sucursales.list');
+*/
+
+
+Route::resource('/productos', 'App\Http\Controllers\ProductosController');
+Route::resource('/categorias', 'App\Http\Controllers\CategoriasController'); 
+Route::resource('/sucursales', 'App\Http\Controllers\SucursalesController');
