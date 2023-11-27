@@ -47,15 +47,15 @@
 
 <!-- Contenido de la página -->
 <div class="container mt-3">
-    <!-- Aquí puedes incluir el contenido específico de cada página -->
-    <!-- Por ejemplo, en home.html podrías mostrar estadísticas, resumen, etc. -->
+
     @yield('content')
+
 </div>
 
 
 
 @section('footer')
-    <h6>Gracias por tu visita!!!</h6>
+    <h6>Software Control de Stock</h6>
 @show
 
 

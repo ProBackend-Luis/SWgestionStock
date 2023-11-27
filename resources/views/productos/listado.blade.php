@@ -7,6 +7,17 @@
 
     <h1>Listado de Productos</h1>
 
+    <form action="" class="row g-3"> 
+            <div class="col-auto">
+        </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" name="texto">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Buscar</button value="buscar"> 
+        </div>
+    </form>
+
     <table class="table">
             <thead>
                 <tr>
@@ -16,8 +27,8 @@
                     <th scope="col">Descripcion</th>
                     <th scope="col">Cantidad</th>
                     <th scope="col">Precio Venta</th>
-                    <th scope="col">Creado</th>
-                    <th scope="col">Actualizado</th>
+                    <th scope="col">Categoria</th> 
+                    <th scope="col">Sucursal</th>                     
                 </tr>
             </thead>
             <tbody>
@@ -29,8 +40,8 @@
                                 <td>{{ $producto->descripcion_producto}}</td>
                                 <td>{{ $producto->cantidad_producto}}</td>
                                 <td>{{ $producto->precioVenta}}</td>
-                                <td>{{ $producto->created_at}}</td>
-                                <td>{{ $producto->updated_at}}</td>
+                                <td>{{ $producto->categoria->nombre_categoria}}</td> 
+                                <td>{{ $producto->sucursal->nombre_sucursal}}</td>                             
                             </tr>
                     @endforeach
             </tbody>
