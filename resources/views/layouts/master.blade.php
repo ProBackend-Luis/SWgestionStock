@@ -13,7 +13,7 @@
 
 @section('header')
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Control-Stock</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,16 +22,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="home.html">Inicio</a>
+                    <a class="nav-link" href="{{url('inicio')}}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="productos.html">Productos</a>
+                    <a class="nav-link" href="{{url('productos')}}">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="categorias.html">Categorías</a>
+                    <a class="nav-link" href="{{url('categorias')}}">Categorías</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="sucursales.html">Sucursales</a>
+                    <a class="nav-link" href="{{url('sucursales')}}">Sucursales</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
@@ -55,7 +55,13 @@
 
 
 @section('footer')
-    <h6>Software Control de Stock</h6>
+<div class="card">
+  <div class="card-body bg-dark text-white">
+    <blockquote class="blockquote mb-6 ">
+      <footer>Desarrollo de software by Luis Lagos</footer>
+    </blockquote>
+  </div>
+</div>
 @show
 
 
