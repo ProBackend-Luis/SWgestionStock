@@ -8,7 +8,7 @@
     <h1>Listado de Sucursales</h1>
 
     <table class="table">
-            <thead>
+            <thead class="table-dark">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
