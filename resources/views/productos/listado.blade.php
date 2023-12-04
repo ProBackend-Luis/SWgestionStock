@@ -4,19 +4,11 @@
 @section('title', 'Productos')
 
 @section('content')
-
+    <div class="container text-center">
     <h1>Listado de Productos</h1>
+    </div>
     <br>
-    <form action="" class="row g-3"> 
-            <div class="col-auto">
-        </div>
-            <div class="col-auto">
-                <input type="text" class="form-control" name="texto">
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3">Buscar</button value="buscar"> 
-        </div>
-    </form>
+    <a href="{{ url('productos/create') }}" class="btn btn-primary mb-3">Nuevo Registro</a>
     <br>
     <div class="table-responsive">
     <table class="table">
@@ -29,8 +21,7 @@
                     <th scope="col">Cantidad</th>
                     <th scope="col">Precio Venta</th>
                     <th scope="col">Categoria</th> 
-                    <th scope="col">Sucursal</th>
-                    <th scope="col">Acciones</th>                      
+                    <th scope="col">Sucursal</th>                     
                 </tr>
             </thead>
             <tbody>
@@ -46,8 +37,13 @@
                                 <td>{{ $producto->sucursal->nombre_sucursal}}</td>
                                 <td>
                                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$producto->id}}">Editar</button>
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$producto->id}}">Eliminar</button>
-                                    
+                                <td>
+                                <td>
+                                    <form action="{{ url('productos/'.$producto->id_producto) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" onclick="return confirm('¿Esta seguro de eliminar?');" class="btn btn-danger">Eliminar</button>
+                                    </form>
                                 </td>                             
                             </tr>
                     @endforeach

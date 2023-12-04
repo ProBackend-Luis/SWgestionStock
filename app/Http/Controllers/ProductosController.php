@@ -23,9 +23,7 @@ class ProductosController extends Controller
     }
 
     public function store(Request $request){
-        //dd($request);
-
-       
+        
         $this->validate($request,[
             'codigo' => 'required',
             'nombre' => 'required',
@@ -48,4 +46,19 @@ class ProductosController extends Controller
         $productos = Producto::get();
         return view('productos.listado', ['productos' =>  $productos ]);
     }
+
+
+    public function edit($productos){}
+
+
+    public function destroy($productos){
+
+        $producto = Producto::find($productos);
+        $producto ->delete();
+
+        $productos = Producto::get();
+        return view('productos.listado', ['productos' =>  $productos ]);
+
+    }
+
 }
