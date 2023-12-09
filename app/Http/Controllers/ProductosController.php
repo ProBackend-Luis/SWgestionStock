@@ -48,7 +48,26 @@ class ProductosController extends Controller
     }
 
 
-    public function edit($productos){}
+    public function edit($productos){
+
+        $producto = Producto::find($productos);
+
+        return view('productos.edit',['producto' => $producto ]);
+    }
+
+
+    public function update(Request $request, $productos){
+
+        $producto = Producto::find($productos);
+        $producto->nombre_producto = $request->nombre;
+        $producto->descripcion_producto = $request->descripcion;
+        $producto->precioVenta = $request->precioVenta;
+        $producto->save();
+
+        $productos = Producto::get();
+        return view('productos.listado', ['productos' =>  $productos ]);
+
+    }
 
 
     public function destroy($productos){

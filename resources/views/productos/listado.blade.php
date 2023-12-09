@@ -36,7 +36,7 @@
                                 <td>{{ $producto->categoria->nombre_categoria}}</td> 
                                 <td>{{ $producto->sucursal->nombre_sucursal}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$producto->id}}">Editar</button>
+                                <a type="button" href="/productos/{{ $producto->id_producto }}/edit" class="btn btn-success">Editar</a>   
                                 <td>
                                 <td>
                                     <form action="{{ url('productos/'.$producto->id_producto) }}" method="POST">
