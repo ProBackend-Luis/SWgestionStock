@@ -16,6 +16,7 @@ class ProductosController extends Controller
 
     }
 
+
     public function create(){
         $sucursales = Sucursal::get();
         return view('productos.crear')
@@ -25,11 +26,13 @@ class ProductosController extends Controller
     public function store(Request $request){
         
         $this->validate($request,[
-            'codigo' => 'required',
-            'nombre' => 'required',
-            'descripcion' => 'required',
-            'cantidad' => 'required',
-            'precioVenta' => 'required',
+            'codigo' => ['required','max:8'],
+            'nombre' => ['required', 'max:30'],
+            'descripcion' => ['required','max:50'],
+            'cantidad' => 'required|numeric',
+            'precioVenta' => 'required|numeric',
+            'categoria' => 'required|numeric',
+            'sucursal' => 'required|numeric',
 
         ]);
         
@@ -46,6 +49,8 @@ class ProductosController extends Controller
         $productos = Producto::get();
         return view('productos.listado', ['productos' =>  $productos ]);
     }
+
+
 
 
     public function edit($productos){

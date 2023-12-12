@@ -7,6 +7,14 @@
     <div class="container text-center">
     <h1>Listado de Productos</h1>
     </div>
+    <div class="d-md-flex justify-content-md-end">
+        <form action="{{ route('productos.index') }}" method="GET">
+            <div class="btn-group">
+                <input type="text" name="busqueda" class="form-control">
+                <input type="submit" name="enviar" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
     <br>
     <a href="{{ url('productos/create') }}" class="btn btn-primary mb-3">Nuevo Registro</a>
     <br>

@@ -55,3 +55,6 @@ Route::get('/sucursales', [SucursalesController::class, 'list'])->name('sucursal
 Route::resource('/productos', 'App\Http\Controllers\ProductosController');
 Route::resource('/categorias', 'App\Http\Controllers\CategoriasController'); 
 Route::resource('/sucursales', 'App\Http\Controllers\SucursalesController');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
